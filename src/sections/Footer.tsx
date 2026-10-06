@@ -14,12 +14,12 @@ const Footer = () => {
   ];
 
   const quickLinks = [
-    { label: 'Home', href: '#hero' },
-    { label: 'About', href: '#about' },
-    { label: 'Experience', href: '#experience' },
-    { label: 'Projects', href: '#projects' },
-    { label: 'Skills', href: '#skills' },
-    { label: 'Contact', href: '#contact' },
+    { label: 'Home', href: '/HemanthCG', sectionId: 'hero' },
+    { label: 'About', href: '/HemanthCG', sectionId: 'about' },
+    { label: 'Experience', href: '/HemanthCG', sectionId: 'experience' },
+    { label: 'Projects', href: '/HemanthCG', sectionId: 'projects' },
+    { label: 'Skills', href: '/HemanthCG', sectionId: 'skills' },
+    { label: 'Contact', href: '/HemanthCG', sectionId: 'contact' },
   ];
 
   return (
@@ -31,7 +31,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-3 gap-12 mb-12">
           {/* Brand */}
           <div>
-            <a href="#hero" className="inline-block text-3xl font-bold text-white mb-4">
+            <a href="/HemanthCG" className="inline-block text-3xl font-bold text-white mb-4">
               Hemanth C G<span className="text-[#d0ff59]"></span>
             </a>
             <p className="text-[#c2c2c2] mb-6 max-w-sm">
@@ -62,6 +62,13 @@ const Footer = () => {
                 <li key={index}>
                   <a
                     href={link.href}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      const element = document.getElementById(link.sectionId);
+                      if (element) {
+                        element.scrollIntoView({ behavior: 'smooth' });
+                      }
+                    }}
                     className="interactive text-[#c2c2c2] hover:text-[#d0ff59] transition-colors"
                   >
                     {link.label}

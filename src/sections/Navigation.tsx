@@ -7,12 +7,12 @@ const Navigation = () => {
   const [activeSection, setActiveSection] = useState('hero');
 
   const navItems = [
-    { label: 'Home', href: '#hero' },
-    { label: 'About', href: '#about' },
-    { label: 'Experience', href: '#experience' },
-    { label: 'Projects', href: '#projects' },
-    { label: 'Skills', href: '#skills' },
-    { label: 'Contact', href: '#contact' },
+    { label: 'Home', href: '/HemanthCG', sectionId: 'hero' },
+    { label: 'About', href: '/HemanthCG', sectionId: 'about' },
+    { label: 'Experience', href: '/HemanthCG', sectionId: 'experience' },
+    { label: 'Projects', href: '/HemanthCG', sectionId: 'projects' },
+    { label: 'Skills', href: '/HemanthCG', sectionId: 'skills' },
+    { label: 'Contact', href: '/HemanthCG', sectionId: 'contact' },
   ];
 
   useEffect(() => {
@@ -37,9 +37,14 @@ const Navigation = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
     e.preventDefault();
-    const element = document.querySelector(href);
+
+    if (window.location.pathname !== '/HemanthCG') {
+      window.history.pushState({}, '', '/HemanthCG');
+    }
+
+    const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
       setIsMobileMenuOpen(false);
@@ -60,8 +65,8 @@ const Navigation = () => {
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
             <a 
-              href="#hero"
-              onClick={(e) => handleNavClick(e, '#hero')}
+              href="/HemanthCG"
+              onClick={(e) => handleNavClick(e, 'hero')}
               className="interactive text-2xl font-bold text-white hover:text-[#d0ff59] transition-colors"
             >
               Hemanth C G<span className="text-[#d0ff59]"></span>
@@ -71,17 +76,17 @@ const Navigation = () => {
             <div className="hidden lg:flex items-center gap-1">
               {navItems.map((item) => (
                 <a
-                  key={item.href}
+                  key={item.label}
                   href={item.href}
-                  onClick={(e) => handleNavClick(e, item.href)}
+                  onClick={(e) => handleNavClick(e, item.sectionId)}
                   className={`interactive relative px-4 py-2 text-sm font-medium transition-colors ${
-                    activeSection === item.href.slice(1)
+                    activeSection === item.sectionId
                       ? 'text-[#d0ff59]'
                       : 'text-white/70 hover:text-white'
                   }`}
                 >
                   {item.label}
-                  {activeSection === item.href.slice(1) && (
+                  {activeSection === item.sectionId && (
                     <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1 h-1 bg-[#d0ff59] rounded-full" />
                   )}
                 </a>
@@ -90,8 +95,8 @@ const Navigation = () => {
 
             {/* CTA Button */}
             <a
-              href="#contact"
-              onClick={(e) => handleNavClick(e, '#contact')}
+              href="/HemanthCG"
+              onClick={(e) => handleNavClick(e, 'contact')}
               className="interactive hidden lg:block px-6 py-2.5 bg-[#d0ff59] text-[#0f0f0f] text-sm font-semibold rounded-full hover:shadow-[0_0_20px_rgba(208,255,89,0.4)] transition-all duration-300"
             >
               Hire Me
@@ -125,11 +130,11 @@ const Navigation = () => {
         <div className="relative h-full flex flex-col items-center justify-center gap-6">
           {navItems.map((item, index) => (
             <a
-              key={item.href}
+              key={item.label}
               href={item.href}
-              onClick={(e) => handleNavClick(e, item.href)}
+              onClick={(e) => handleNavClick(e, item.sectionId)}
               className={`text-3xl font-bold transition-all duration-300 ${
-                activeSection === item.href.slice(1)
+                activeSection === item.sectionId
                   ? 'text-[#d0ff59]'
                   : 'text-white/70 hover:text-white'
               }`}
@@ -144,8 +149,8 @@ const Navigation = () => {
           ))}
           
           <a
-            href="#contact"
-            onClick={(e) => handleNavClick(e, '#contact')}
+            href="/HemanthCG"
+            onClick={(e) => handleNavClick(e, 'contact')}
             className="mt-8 px-8 py-3 bg-[#d0ff59] text-[#0f0f0f] font-semibold rounded-full"
             style={{
               transitionDelay: isMobileMenuOpen ? `${navItems.length * 50}ms` : '0ms',

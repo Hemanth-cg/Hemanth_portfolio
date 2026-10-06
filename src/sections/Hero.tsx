@@ -120,17 +120,25 @@ const Hero = () => {
 
         <div ref={ctaRef} className="flex flex-col sm:flex-row gap-4 justify-center">
           <a 
-            href="#projects"
+            href="/HemanthCG"
             className="interactive magnetic-btn group relative px-8 py-4 bg-[#d0ff59] text-[#0f0f0f] font-semibold rounded-full overflow-hidden transition-all duration-300 hover:shadow-[0_0_30px_rgba(208,255,89,0.5)]"
           >
             <span className="relative z-10 flex items-center justify-center gap-2">
-              View My Work
+              Hemanth C G
               <ArrowDown className="w-5 h-5 group-hover:translate-y-1 transition-transform" />
             </span>
           </a>
           
           <a 
-            href="#contact"
+            href="/HemanthCG"
+            onClick={(e) => {
+              e.preventDefault();
+              const element = document.getElementById('contact');
+              if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+                window.history.pushState({}, '', '/HemanthCG');
+              }
+            }}
             className="interactive magnetic-btn px-8 py-4 border border-white/20 text-white font-semibold rounded-full hover:bg-white/10 transition-all duration-300"
           >
             Get In Touch
