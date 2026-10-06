@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, Heart, ArrowUp } from 'lucide-react';
+import { Github, Linkedin, Mail, ArrowUp } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -8,8 +8,8 @@ const Footer = () => {
   };
 
   const socialLinks = [
-    { icon: Github, href: 'https://github.com/hemanthcg', label: 'GitHub' },
-    { icon: Linkedin, href: 'https://linkedin.com/in/hemanthcg', label: 'LinkedIn' },
+    { icon: Github, href: 'https://github.com/Hemanth-cg', label: 'GitHub' },
+    { icon: Linkedin, href: 'https://www.linkedin.com/in/hemanth-cg-746279259/', label: 'LinkedIn' },
     { icon: Mail, href: 'mailto:hemanthcghemu@gmail.com', label: 'Email' },
   ];
 

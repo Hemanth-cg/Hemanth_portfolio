@@ -12,9 +12,9 @@ const About = () => {
   const statsRef = useRef<HTMLDivElement>(null);
 
   const stats = [
-    { icon: Briefcase, value: '2+', label: 'Years Experience', delay: 0 },
-    { icon: Code, value: '10+', label: 'Projects Completed', delay: 0.1 },
-    { icon: Award, value: '5+', label: 'Technologies Mastered', delay: 0.2 },
+    { icon: Briefcase, value: '0.6+', label: 'Years Experience', delay: 0 },
+    { icon: Code, value: '5+', label: 'Projects Completed', delay: 0.1 },
+    { icon: Award, value: '10+', label: 'Technologies Mastered', delay: 0.2 },
   ];
 
   useEffect(() => {
@@ -131,17 +131,39 @@ const About = () => {
 
           <div ref={textRef} className="space-y-4 mb-10 max-w-2xl mx-auto">
             <p className="text-line text-lg text-[#c2c2c2] leading-relaxed">
-              Results-driven software engineer with experience in developing robust, 
-              secure, and scalable applications using Java, Spring Boot, Hibernate, and MySQL.
+              I’m a Java Full Stack Developer focused on creating clean, scalable, and high-performance web applications
+              using React.js, Java, Spring Boot, Flask, and MySQL.
             </p>
             <p className="text-line text-lg text-[#c2c2c2] leading-relaxed">
-              I specialize in building efficient backend logic while ensuring system 
-              reliability and delivering solutions that enhance performance and user satisfaction.
+              I enjoy turning business requirements into practical solutions by building responsive interfaces,
+              designing efficient backend services, and integrating secure APIs with reliable data models.
             </p>
             <p className="text-line text-lg text-[#c2c2c2] leading-relaxed">
-              My journey in tech started during my Computer Science degree, and I've since 
-              honed my skills through internships and personal projects that solve real-world problems.
+              Through internships and project work, I’ve developed a strong foundation in full-stack development,
+              database design, and problem-solving for real-world application needs.
             </p>
+
+            <div className="pt-4">
+              <p className="text-sm uppercase tracking-[0.2em] text-[#d0ff59] mb-3">Let’s Connect</p>
+              <div className="flex justify-center gap-4">
+                <a
+                  href="https://github.com/Hemanth-cg"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="interactive inline-flex items-center justify-center rounded-full border border-white/20 px-5 py-2.5 text-sm font-medium text-white transition hover:border-[#d0ff59] hover:text-[#d0ff59]"
+                >
+                  GitHub
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/hemanth-cg-746279259/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="interactive inline-flex items-center justify-center rounded-full border border-white/20 px-5 py-2.5 text-sm font-medium text-white transition hover:border-[#d0ff59] hover:text-[#d0ff59]"
+                >
+                  LinkedIn
+                </a>
+              </div>
+            </div>
           </div>
 
           {/* Stats cards */}

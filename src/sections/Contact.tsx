@@ -37,8 +37,8 @@ const Contact = () => {
   ];
 
   const socialLinks = [
-    { icon: Github, label: 'GitHub', href: 'https://github.com/hemanthcg' },
-    { icon: Linkedin, label: 'LinkedIn', href: 'https://linkedin.com/in/hemanthcg' },
+    { icon: Github, label: 'GitHub', href: 'https://github.com/Hemanth-cg' },
+    { icon: Linkedin, label: 'LinkedIn', href: 'https://www.linkedin.com/in/hemanth-cg-746279259/' },
   ];
 
   useEffect(() => {
